@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import TopUniversitiesSection from "@/components/TopUniversitiesSection"; 
 import { motion } from "framer-motion";
+import { MythsSection } from "@/components/MythsSection";
 import { 
   GraduationCap, 
   CheckCircle2, 
@@ -22,7 +23,11 @@ import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Testimonial } from "@/components/TestimonialCard";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
-
+import { DocumentationSection } from "@/components/DocumentationSection";
+import { AdmissionProcessSection } from "@/components/AdmissionProcessSection";
+import { CommonMistakesSection } from "@/components/CommonMistakesSection";
+import { CareersSection } from "@/components/CareersSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
 const specializations = [
   {
     id: "cse",
@@ -276,98 +281,9 @@ const BTech = () => {
         </div>
       </section>
 
-      {/* Specializations */}
-      <section className="py-20 relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Choose Your <span className="text-gradient-saffron">Specialization</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Select from our range of cutting-edge engineering disciplines
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {specializations.map((spec, index) => (
-              <motion.div
-                key={spec.id}
-                id={spec.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="group relative"
-              >
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* Card */}
-                <div className="relative h-full bg-card/60 backdrop-blur-sm rounded-2xl border border-border hover:border-primary/50 p-6 transition-all duration-300">
-                  {/* Icon */}
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4 glow-saffron"
-                  >
-                    <spec.icon className="h-7 w-7 text-primary-foreground" />
-                  </motion.div>
+    <CareersSection/>
 
 
-
-
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    {spec.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-muted-foreground text-sm mb-4">
-                    {spec.description}
-                  </p>
- 
-
-
-
-                  {/* Highlights */}
-                  <div className="flex flex-wrap gap-2">
-                    {spec.highlights.map((highlight, i) => (
-                      <span
-                        key={i}
-                        className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full"
-                      >
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-                  {/* Admission Process Button */}
-<motion.button
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  onClick={() => navigate("/admission-process")}
-  className="mt-6 w-full px-4 py-2 text-sm font-semibold rounded-xl
-             bg-gradient-to-r from-primary to-accent
-             text-primary-foreground shadow-md"
->
-  Admission Process
-</motion.button>
-                </div>
-
-
-                
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
       <section className="py-20 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -382,7 +298,12 @@ const BTech = () => {
         </div>
       </section>
       <TopUniversitiesSection />
+      <DocumentationSection/>
+      <AdmissionProcessSection/>
+      <CommonMistakesSection/>
+      <MythsSection/>
       <TestimonialsCarousel />
+      <WhyChooseUs/>
       <Footer />
     </div>
   );

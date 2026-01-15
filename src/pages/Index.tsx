@@ -7,6 +7,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import TopicsSection from "@/components/TopicsSection";
 import HeroSections from "@/components/HeroSections";
 import PresentationTips from "@/components/PresentationTips";
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">

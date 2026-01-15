@@ -34,11 +34,17 @@ const topics = [
     title: "State-wise Universities",
     description: "Best engineering colleges across India",
   },
+   {
+    icon: FileText,
+    title: "Documentation",
+    description: "Documents required",
+  },
   {
     icon: FileText,
     title: "Admission Process",
     description: "Step-by-step guide to secure your seat",
   },
+  
   {
     icon: AlertTriangle,
     title: "Common Mistakes",
@@ -48,6 +54,11 @@ const topics = [
     icon: ShieldX,
     title: "Fake Dealings Alert",
     description: "Beware of frauds and scams",
+  },
+  {
+    icon: HelpCircle,
+    title: "state and central counseling in india ",
+    description: "What makes us different",
   },
   {
     icon: Target,
@@ -64,6 +75,8 @@ const topics = [
     title: "Why Career4s?",
     description: "What makes us different",
   },
+   
+    
 ];
 
 const TopicsSection = () => {
@@ -87,17 +100,19 @@ const TopicsSection = () => {
       </motion.div>
 
       {/* Circle cards grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-10 lg:gap-12 max-w-7xl mx-auto">
-        {topics.map((topic, index) => (
-          <CircleCard
-            key={topic.title}
-            icon={topic.icon}
-            title={topic.title}
-            description={topic.description}
-            index={index}
-          />
-        ))}
-      </div>
+      {/* Circle cards grid */}
+<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-10 lg:gap-12 max-w-7xl mx-auto">
+  {topics.map((topic, index) => (
+    <CircleCard
+      key={topic.title}
+      icon={topic.icon}
+      title={topic.title}
+      description={topic.description}
+      index={index}
+    />
+  ))}
+</div>
+
 
       {/* Decorative elements */}
       <motion.div

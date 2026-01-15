@@ -45,8 +45,7 @@ const CircleCard = ({ icon: Icon, title, description, index }: CircleCardProps) 
 
         {/* Main circle */}
         <motion.div
-       className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center cursor-pointer"
-
+          className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 rounded-full flex items-center justify-center cursor-pointer"
           style={{
             background: `linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%)`,
             boxShadow: `
@@ -89,7 +88,7 @@ const CircleCard = ({ icon: Icon, title, description, index }: CircleCardProps) 
               delay: index * 0.2,
             }}
           >
-            <Icon className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-primary group-hover:text-accent transition-colors duration-300" />
+            <Icon className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 text-primary group-hover:text-accent transition-colors duration-300" />
           </motion.div>
 
           {/* Rotating border effect */}
@@ -111,7 +110,7 @@ const CircleCard = ({ icon: Icon, title, description, index }: CircleCardProps) 
 
         {/* Title and description */}
         <motion.div
-          className="mt-4 text-center max-w-[180px]"
+          className="mt-3 text-center max-w-[140px]"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 + 0.3 }}
